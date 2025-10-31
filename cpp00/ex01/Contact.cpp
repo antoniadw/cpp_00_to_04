@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 18:17:14 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/10/29 11:57:27 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/10/29 11:57:49 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/10/29 11:58:47 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
-# include <iostream>
+#include <iostream>
+#include "Contact.hpp"
 
-class Contact {
+Contact::Contact(void) {
+	std::cout << "Contact Constructor called" << std::endl;
+	return;
+}
 
-public:
-	Contact(void);
-	~Contact(void);
-
-private:
-	std::string	_firstName;
-	std::string	_lastName;
-	std::string	_nickName;
-	std::string	_phoneNumber;
-	std::string _darkestSecret;
-};
-
-#endif
+Contact::~Contact(void) {
+	std::cout << "Contact Destructor called" << std::endl;
+	return;
+}
