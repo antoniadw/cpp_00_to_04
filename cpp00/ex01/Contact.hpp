@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:17:14 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/10/29 11:57:27 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/08 13:27:44 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,28 @@
 
 class Contact {
 
-public:
-	Contact(void);
-	~Contact(void);
-
 private:
 	std::string	_firstName;
 	std::string	_lastName;
 	std::string	_nickName;
 	std::string	_phoneNumber;
 	std::string _darkestSecret;
+
+public:
+	Contact(void);
+	~Contact(void);
+
+	void		set_firstName(std::string input);
+	void		set_lastName(std::string input);
+	void		set_nickName(std::string input);
+	void		set_phoneNumber(std::string input);
+	void		set_darkestSecret(std::string input);
+	
+	std::string	get_firstName(void) const;
+	std::string	get_lastName(void) const;
+	std::string	get_nickName(void) const;
+	std::string	get_phoneNumber(void) const;
+	std::string	get_darkestSecret(void) const;
 };
 
 #endif

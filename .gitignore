@@ -4,3 +4,4 @@ megaphone
 .vscode
 .DS_Store
 drafts/
+*.gch
