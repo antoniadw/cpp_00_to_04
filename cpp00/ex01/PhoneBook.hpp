@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:16:36 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/08 15:42:51 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:03:05 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class PhoneBook {
 
 public:
-	PhoneBook(void);
+	PhoneBook(int i, int j);
 	~PhoneBook(void);
 
 	void		addContact();
@@ -28,8 +28,10 @@ public:
 private:
 	int			_nextIndex;
 	int			_totalContacts;
-	Contact		_contacts[3];
-	//std::string	_trimString(std::string str, int len);
+	Contact		_contacts[8];
+	int			_getDisplayId(void) const;
+	void		_displayContact(int index) const;
+	std::string	_trimString(std::string str, size_t len) const;
 	
 };
 
