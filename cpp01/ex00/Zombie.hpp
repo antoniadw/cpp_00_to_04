@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 21:39:42 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/12 21:53:30 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:56:10 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 # include <iostream>
 
 class Zombie {
+	private:
+		std::string	_name;
 
-private:
-	std::string	Name;
-
-public:
-	Zombie();
-	~Zombie();
-	
-	void	announce(void) const;
+	public:
+		Zombie(std::string name);
+		~Zombie();
+		
+		void	announce(void) const;
 };
 
+void	randomChump(std::string name);
+Zombie	*newZombie(std::string name);
+		
 #endif
