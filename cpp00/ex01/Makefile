@@ -2,24 +2,26 @@ NAME = phonebook
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
+OBJDIR = objs/
 
 SRC = 	Contact.cpp		\
 		main.cpp		\
 		PhoneBook.cpp	\
 
-OBJ = $(SRC:.cpp=.o)
+OBJS = $(addprefix $(OBJDIR), $(SRC:.cpp=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	@$(CPP) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "$(NAME) compiled ✅"
 
-%.o: %.cpp
+$(OBJDIR)%.o: %.cpp
+	@mkdir -p $(dir $@)
 	@$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJDIR)
 	@echo "Clean done."
 
 fclean: clean

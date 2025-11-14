@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:35:53 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/12 20:37:18 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:12:46 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main()
 {
 	std::string	buffer;
-	PhoneBook	MyPhoneBook(0,0);
+	PhoneBook	MyPhoneBook;
 
 	system("clear");
 	std::cout << "** Welcome in this awesome PhoneBook **" << std::endl;

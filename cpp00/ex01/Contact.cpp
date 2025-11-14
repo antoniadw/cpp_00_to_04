@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:57:49 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/10 14:39:49 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/14 11:53:23 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 #include <iostream>
 #include "Contact.hpp"
 
-Contact::Contact(void) {
+Contact::Contact() {
 	//std::cout << "Contact Constructor called" << std::endl;
 	return;
 }
 
-Contact::~Contact(void) {
+Contact::~Contact() {
 	//std::cout << "Contact Destructor called" << std::endl;
 	return;
 }
 
 void	Contact::set_firstName(std::string input) {
 	_firstName = input;
-	//std::cout << "First name set to "<<_firstName <<"" << std::endl;
 }
 
 void	Contact::set_lastName(std::string input) {

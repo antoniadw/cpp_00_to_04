@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:32:13 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/12 19:47:26 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/14 11:53:34 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(int i, int j) : _nextIndex(i), _totalContacts(j) {
+PhoneBook::PhoneBook() : _nextIndex(0), _totalContacts(0) {
 	return;
 }
 
-PhoneBook::~PhoneBook(void) {
+PhoneBook::~PhoneBook() {
 	return;
 }
 
@@ -78,7 +78,8 @@ std::string	PhoneBook::fieldFill(std::string fieldId)
 		std::cout << std::endl;
 		return ("");
 	}
-	while(buffer.empty()){
+	while (buffer.empty())
+	{
 		std::cout << "Field can not be empty" << std::endl;
 		sleep(2);
 		system("clear");
@@ -94,7 +95,8 @@ std::string	PhoneBook::fieldFill(std::string fieldId)
 
 void	PhoneBook::searchContact(void) const 
 {
-	if (_totalContacts == 0) {
+	if (_totalContacts == 0) 
+	{
 		std::cout << "** PhoneBook is empty **" << std::endl;
 		sleep(2);
 		system("clear");
@@ -106,7 +108,8 @@ void	PhoneBook::searchContact(void) const
 				<< std::setw(10) << "LASTNAME" << "|"
 				<< std::setw(10) << "NICKNAME" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	for (int i = 0 ; i < _totalContacts ; i++) {
+	for (int i = 0 ; i < _totalContacts ; i++) 
+	{
 		std::cout 	<< std::setw(10) << i + 1 << "|"
 					<< std::setw(10) << _trimString(_contacts[i].get_firstName(), 10) << "|"
 					<< std::setw(10) << _trimString(_contacts[i].get_lastName(), 10) << "|"
@@ -126,9 +129,8 @@ void	PhoneBook::searchContact(void) const
 
 std::string	PhoneBook::_trimString(std::string str, size_t len) const 
 {
-	if (str.length() >= len) {
+	if (str.length() >= len)
 		return (str.substr(0, len -1) + '.');
-	}
 	return (str);
 }
 
