@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:55:36 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 20:10:16 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/14 20:30:27 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): _name(name), _Weapon(NULL) {
+HumanB::HumanB(std::string name): _name(name) {
 	return ;
 }
 
