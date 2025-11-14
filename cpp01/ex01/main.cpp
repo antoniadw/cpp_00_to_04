@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 14:43:02 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 19:46:22 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/11/14 16:09:06 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/11/14 18:36:22 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 int	main(void)
 {
-	std::cout << "----- CREATING A STACK ZOMBIE -----" << std::endl;
-	std::cout << "Calling randomChump function" << std::endl;
-	randomChump("Carlos");
-	std::cout << "Back in main function after randomChump" << std::endl;
-	std::cout << std::endl;
-	
-	std::cout << "----- CREATING A HEAP ZOMBIE -----" << std::endl;
-	std::cout << "Calling newZombie function" << std::endl;
-	Zombie	*heapZombie = newZombie("Claude");
-	std::cout << "Back in main function after newZombie" << std::endl;
-	heapZombie->announce();
-	delete heapZombie;
+	int	N = 5;
+	std::string name = "Lucas";
+	Zombie*	horde = zombieHorde(N, name);
+	if (!horde)
+		return (0);
+	for (int i = 0; i < N; i++)
+		horde[i].announce();
+	delete [] horde;
 	return (0);
 }

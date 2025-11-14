@@ -5,26 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 14:43:02 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 19:46:22 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/11/14 18:55:46 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/11/14 20:09:40 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-int	main(void)
+int	main ()
 {
-	std::cout << "----- CREATING A STACK ZOMBIE -----" << std::endl;
-	std::cout << "Calling randomChump function" << std::endl;
-	randomChump("Carlos");
-	std::cout << "Back in main function after randomChump" << std::endl;
-	std::cout << std::endl;
-	
-	std::cout << "----- CREATING A HEAP ZOMBIE -----" << std::endl;
-	std::cout << "Calling newZombie function" << std::endl;
-	Zombie	*heapZombie = newZombie("Claude");
-	std::cout << "Back in main function after newZombie" << std::endl;
-	heapZombie->announce();
-	delete heapZombie;
+	{
+		Weapon	club = Weapon("crude spiked club");
+
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon	club = Weapon("crude spiked club");
+		
+		HumanB	jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return (0);
 }
