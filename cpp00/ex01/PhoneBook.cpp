@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:32:13 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/22 13:37:40 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 13:43:27 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ bool	isOnlySpace(std::string buffer)
 {
 	for (size_t i = 0; i < buffer.length(); i++)
 	{
-		if (std::isspace((buffer[i]) == 0))
+		if (std::isspace(buffer[i]) == 0)
 			return (false);
 	}
 	return (true);
