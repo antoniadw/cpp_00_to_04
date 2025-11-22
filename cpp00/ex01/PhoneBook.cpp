@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:32:13 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/22 13:43:27 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 16:00:54 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	PhoneBook::addContact(void)
 	std::string	buffer;
 	
 	system("clear");
-	std::cout << "** CREATING CONTACT "<<_nextIndex + 1<<"/9 **" << std::endl;
+	std::cout << "** CREATING CONTACT "<<_nextIndex + 1 <<"/8 **" << std::endl;
 	buffer = fieldFill("first name");
 	if (std::cin.eof())
 		return;
@@ -155,7 +155,7 @@ int	PhoneBook::_getDisplayId(void) const
 		return (-1);
 	}
 	index = buffer[0] - '0';
-	if (index < 0 || index > _totalContacts) {
+	if (index <= 0 || index > _totalContacts) {
 		std::cout << "** Invalid index **" << std::endl;
 		return (-1);
 	}

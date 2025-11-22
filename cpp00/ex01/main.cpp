@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:35:53 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/22 13:00:50 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 16:00:46 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,8 @@ int	main()
 		else if (buffer == "EXIT") {
 			break;
 		}
-		else {
+		else
 			std::cout << "** UNKNOWN COMMAND **" << std::endl;
-			sleep(1);
-			system("clear");
-		}
 		std::cout << "> Type in ADD, SEARCH or EXIT" << std::endl;
 	}
 	std::cout << "** Leaving PhoneBook bye **" << std::endl;
