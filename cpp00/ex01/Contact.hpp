@@ -6,12 +6,13 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:17:14 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 11:14:14 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 12:14:38 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_H
 # define CONTACT_H
+
 # include <iostream>
 
 class Contact {
@@ -26,17 +27,17 @@ class Contact {
 		Contact(void);
 		~Contact(void);
 
-		void		set_firstName(std::string input);
-		void		set_lastName(std::string input);
-		void		set_nickName(std::string input);
-		void		set_phoneNumber(std::string input);
-		void		set_darkestSecret(std::string input);
+		void		setFirstName(std::string input);
+		void		setLastName(std::string input);
+		void		setNickName(std::string input);
+		void		setPhoneNumber(std::string input);
+		void		setDarkestSecret(std::string input);
 		
-		std::string	get_firstName(void) const;
-		std::string	get_lastName(void) const;
-		std::string	get_nickName(void) const;
-		std::string	get_phoneNumber(void) const;
-		std::string	get_darkestSecret(void) const;
+		std::string	getFirstName(void) const;
+		std::string	getLastName(void) const;
+		std::string	getNickName(void) const;
+		std::string	getPhoneNumber(void) const;
+		std::string	getDarkestSecret(void) const;
 };
 
 #endif

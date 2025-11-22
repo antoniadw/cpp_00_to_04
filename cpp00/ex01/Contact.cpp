@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:57:49 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 11:53:23 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 12:15:20 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,42 +24,42 @@ Contact::~Contact() {
 	return;
 }
 
-void	Contact::set_firstName(std::string input) {
+void	Contact::setFirstName(std::string input) {
 	_firstName = input;
 }
 
-void	Contact::set_lastName(std::string input) {
+void	Contact::setLastName(std::string input) {
 	_lastName = input;
 }
 
-void	Contact::set_nickName(std::string input) {
+void	Contact::setNickName(std::string input) {
 	_nickName = input;
 }
 
-void	Contact::set_phoneNumber(std::string input) {
+void	Contact::setPhoneNumber(std::string input) {
 	_phoneNumber = input;
 }
 
-void	Contact::set_darkestSecret(std::string input) {
+void	Contact::setDarkestSecret(std::string input) {
 	_darkestSecret = input;
 }
 
-std::string	Contact::get_firstName(void) const {
+std::string	Contact::getFirstName(void) const {
 	return (_firstName);
 }
 
-std::string	Contact::get_lastName(void) const {
+std::string	Contact::getLastName(void) const {
 	return (_lastName);
 }
 
-std::string	Contact::get_nickName(void) const {
+std::string	Contact::getNickName(void) const {
 	return (_nickName);
 }
 
-std::string	Contact::get_phoneNumber(void) const {
+std::string	Contact::getPhoneNumber(void) const {
 	return (_phoneNumber);
 }
 
-std::string	Contact::get_darkestSecret(void) const {
+std::string	Contact::getDarkestSecret(void) const {
 	return (_darkestSecret);
 }

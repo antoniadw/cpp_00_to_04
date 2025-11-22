@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:32:13 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 11:53:34 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 12:16:41 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,32 @@ void	PhoneBook::addContact(void)
 	Contact		newContact;
 	std::string	buffer;
 	
+	system("clear");
 	std::cout << "** CREATING CONTACT "<<_nextIndex + 1<<"/9 **" << std::endl;
-	sleep(2);
 	buffer = fieldFill("first name");
 	if (std::cin.eof())
 		return;
-	newContact.set_firstName(buffer);
+	newContact.setFirstName(buffer);
 	
 	buffer = fieldFill("last name");
 	if (std::cin.eof())
 		return;
-	newContact.set_lastName(buffer);
+	newContact.setLastName(buffer);
 
 	buffer = fieldFill("nickname");
 	if (std::cin.eof())
 		return;
-	newContact.set_nickName(buffer);
+	newContact.setNickName(buffer);
 
 	buffer = fieldFill("phone number");
 	if (std::cin.eof())
 		return;
-	newContact.set_phoneNumber(buffer);
+	newContact.setPhoneNumber(buffer);
 
 	buffer = fieldFill("darkest secret");
 	if (std::cin.eof())
 		return;
-	newContact.set_darkestSecret(buffer);
+	newContact.setDarkestSecret(buffer);
 
 	_contacts[_nextIndex] = newContact;
 	if (_totalContacts < 8)
@@ -63,7 +63,7 @@ void	PhoneBook::addContact(void)
 		_nextIndex = 0;
 	
 	std::cout << "** NEW CONTACT ADDED SUCCESSFULLY **" << std::endl;
-	sleep(2);
+	sleep(1);
 	system("clear");
 	return;
 }
@@ -81,7 +81,6 @@ std::string	PhoneBook::fieldFill(std::string fieldId)
 	while (buffer.empty())
 	{
 		std::cout << "Field can not be empty" << std::endl;
-		sleep(2);
 		system("clear");
 		std::cout << "> Enter contact "<< fieldId <<":" << std::endl;
 		std::getline(std::cin, buffer);
@@ -98,7 +97,7 @@ void	PhoneBook::searchContact(void) const
 	if (_totalContacts == 0) 
 	{
 		std::cout << "** PhoneBook is empty **" << std::endl;
-		sleep(2);
+		sleep(1);
 		system("clear");
 		return ;
 	}
@@ -111,15 +110,15 @@ void	PhoneBook::searchContact(void) const
 	for (int i = 0 ; i < _totalContacts ; i++) 
 	{
 		std::cout 	<< std::setw(10) << i + 1 << "|"
-					<< std::setw(10) << _trimString(_contacts[i].get_firstName(), 10) << "|"
-					<< std::setw(10) << _trimString(_contacts[i].get_lastName(), 10) << "|"
-					<< std::setw(10) << _trimString(_contacts[i].get_nickName(), 10) << "|" << std::endl;
+					<< std::setw(10) << _trimString(_contacts[i].getFirstName(), 10) << "|"
+					<< std::setw(10) << _trimString(_contacts[i].getLastName(), 10) << "|"
+					<< std::setw(10) << _trimString(_contacts[i].getNickName(), 10) << "|" << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 	sleep(1);
 	int id = _getDisplayId();
 	if (id == -1) {
-		sleep(2);
+		sleep(1);
 		system("clear");
 		return ;
 	}
@@ -160,11 +159,11 @@ int	PhoneBook::_getDisplayId(void) const
 void	PhoneBook::_displayContact(int index) const
 {
 	std::cout << "\n--- Contact Details ---" << std::endl;
-	std::cout << "First name: " << _contacts[index - 1].get_firstName() << std::endl;
-	std::cout << "Last name: " << _contacts[index - 1].get_lastName() << std::endl;
-	std::cout << "Nickname: " << _contacts[index - 1].get_nickName() << std::endl;
-	std::cout << "Phone number: " << _contacts[index - 1].get_phoneNumber() << std::endl;
-	std::cout << "Darkest secret: " << _contacts[index -1].get_darkestSecret() << std::endl;
+	std::cout << "First name: " << _contacts[index - 1].getFirstName() << std::endl;
+	std::cout << "Last name: " << _contacts[index - 1].getLastName() << std::endl;
+	std::cout << "Nickname: " << _contacts[index - 1].getNickName() << std::endl;
+	std::cout << "Phone number: " << _contacts[index - 1].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << _contacts[index -1].getDarkestSecret() << std::endl;
 	std::cout << std::endl;
 	std::cout << "** PRESS ANY KEY TO CONTINUE **" << std::endl;
 	std::cin.get();
