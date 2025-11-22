@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:32:13 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/22 12:16:41 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 13:37:40 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iomanip>
-#include <iostream>
-#include <unistd.h>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
@@ -68,6 +65,16 @@ void	PhoneBook::addContact(void)
 	return;
 }
 
+bool	isOnlySpace(std::string buffer)
+{
+	for (size_t i = 0; i < buffer.length(); i++)
+	{
+		if (std::isspace((buffer[i]) == 0))
+			return (false);
+	}
+	return (true);
+}
+
 std::string	PhoneBook::fieldFill(std::string fieldId)
 {
 	std::string	buffer;
@@ -78,10 +85,9 @@ std::string	PhoneBook::fieldFill(std::string fieldId)
 		std::cout << std::endl;
 		return ("");
 	}
-	while (buffer.empty())
+	while (buffer.empty() || isOnlySpace(buffer))
 	{
 		std::cout << "Field can not be empty" << std::endl;
-		system("clear");
 		std::cout << "> Enter contact "<< fieldId <<":" << std::endl;
 		std::getline(std::cin, buffer);
 		if (std::cin.eof()) {

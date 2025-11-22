@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 16:21:43 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 11:13:26 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 12:57:19 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 		{
 			for (int j = 0; argv[i][j] != '\0'; j++)
 				std::cout << (char)std::toupper(argv[i][j]);
+			std::cout << " ";
 		}
 		std::cout << std::endl;
 	}

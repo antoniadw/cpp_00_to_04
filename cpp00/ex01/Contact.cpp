@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:57:49 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/22 12:15:20 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 13:01:19 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iomanip>
-#include <iostream>
 #include "Contact.hpp"
 
 Contact::Contact() {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:16:36 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 11:17:08 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 13:00:31 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define PHONEBOOK_H
 
 # include "Contact.hpp"
+# include <iomanip>
+# include <iostream>
+# include <unistd.h>
+# include <stdlib.h>
 
 class PhoneBook {
 	private:

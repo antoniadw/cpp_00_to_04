@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:35:53 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/13 14:12:46 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/22 13:00:50 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <unistd.h>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
