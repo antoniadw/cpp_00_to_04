@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:49:30 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/25 12:31:28 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/26 13:44:40 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Zombie {
 		void	announce(void) const;
 };
 
+Zombie	*zombieHorde(int N, const char *name);
 Zombie	*zombieHorde(int N, std::string name);
 
 #endif

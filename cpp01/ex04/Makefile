@@ -1,4 +1,4 @@
-NAME = replaceTool
+NAME = Sed
 CPP = c++
 FLAGS = -g -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
