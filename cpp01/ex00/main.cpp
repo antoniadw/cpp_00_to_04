@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:43:02 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 19:46:22 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:23:28 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	
 	std::cout << "----- CREATING A HEAP ZOMBIE -----" << std::endl;
 	std::cout << "Calling newZombie function" << std::endl;
-	Zombie	*heapZombie = newZombie("Claude");
+	Zombie	*heapZombie = newZombie("Paul");
 	std::cout << "Back in main function after newZombie" << std::endl;
 	heapZombie->announce();
 	delete heapZombie;

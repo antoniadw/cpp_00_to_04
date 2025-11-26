@@ -6,19 +6,15 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:55:33 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/17 14:18:00 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:06:37 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& type): _name(name), _Weapon(type) {
-	return ;
-}
+HumanA::HumanA(std::string name, Weapon& type): _name(name), _Weapon(type) {}
 
-HumanA::~HumanA() {
-	return ;
-}
+HumanA::~HumanA() {}
 
 void	HumanA::attack() const 
 {

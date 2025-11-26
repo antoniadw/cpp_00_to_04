@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 21:43:23 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/19 18:09:24 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:36:53 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string	replaceString(std::string line, const std::string& s1, const std::st
 int	main(int argc, char **argv)
 {
 	if (argc != 4) {
-		std::cout << "Error, expecting 3 arguments [filename] [string1] [string2]" << std::endl;
+		std::cerr << "Error, expecting 3 arguments [filename] [string1] [string2]" << std::endl;
 		return (1);
 	}
 	std::string		fileName = argv[1];
@@ -45,12 +45,12 @@ int	main(int argc, char **argv)
 	
 	std::ifstream	inputFile(fileName);
 	if (!inputFile.is_open()) {
-		std::cerr << "Could not open input file" << std::endl;
+		std::cerr << "Could not open input file " << fileName << std::endl;
 		return (1);
 	}
 	std::ofstream	outputFile(newFile);
 	if (!outputFile.is_open()) {
-		std::cerr << "Could not open ouput file" << std::endl;
+		std::cerr << "Could not open output file " << newFile << std::endl;
 		inputFile.close();
 		return (1);
 	}
@@ -60,8 +60,8 @@ int	main(int argc, char **argv)
 	{
 		std::string	newLine = replaceString(line, s1, s2);
 		outputFile << newLine;
-		if (inputFile.peek() != EOF)
-			outputFile << '\n';
+		// if (inputFile.peek() != EOF)
+		// 	outputFile << '\n';
 	}
 	inputFile.close();
 	outputFile.close();

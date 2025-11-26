@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:49:30 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 17:39:18 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:31:28 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Zombie {
 		Zombie();
 		~Zombie();
 
-		void	set_Name(std::string input);
+		void	setName(std::string input);
 		void	announce(void) const;
 };
 

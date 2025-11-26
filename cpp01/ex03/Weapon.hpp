@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:52:02 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 20:28:55 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:57:33 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 
 	public:
 		Weapon();
-		Weapon(const std::string& type);
+		Weapon(const char *type);
 		~Weapon();
 
 		void				setType(const std::string& newType);

@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:23:48 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/14 19:46:53 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:24:44 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,3 @@ int	main(void)
 	
 	return (0);
 }
-
-/* A reference is defined as an alias to an existing variable 
-				OR
-
-*/
-
-/* Une reference = un alias vers une variable existante */
-/* Une reference = un pointeur qui est constant, toujours dereference et jamais NULL */
