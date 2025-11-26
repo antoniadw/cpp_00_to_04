@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 21:45:24 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/26 15:34:51 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/26 17:50:59 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,25 @@ Harl::Harl() {};
 Harl::~Harl() {};
 
 void	Harl::debug(void) {
-	std::cout 	<< "This is a DEBUG log - level 4" << std::endl;
+	std::cout 	<< "[ DEBUG ]" << std::endl;
+	std::cout 	<< "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" 
+				<< std::endl;
 }
 void	Harl::info(void) {
-	std::cout << "This is an INFO log - level 3" << std::endl;
+	std::cout 	<< "[ INFO ]" << std::endl;
+	std::cout 	<< "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" 
+				<< std::endl;
 				
 }
 void	Harl::warning(void) {
-	std::cout << "This is a WARNING log - level 2" << std::endl;
+	std::cout 	<< "[ WARNING ]" << std::endl;
+	std::cout 	<< "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." 
+				<< std::endl;
 }
 void	Harl::error(void) {
-	std::cout << "This is an ERROR log - level 1" << std::endl;
-}
-
-void	Harl::complain(const char *level) {
-	if (!level) {
-		std::cerr << "Error, Harl has nothing to complain about" << std::endl;
-		return ;
-	}
-	else
-		complain(std::string(level));
+	std::cout 	<< "[ ERROR ]" << std::endl;
+	std::cout 	<< "This is unacceptable! I want to speak to the manager now." 
+				<< std::endl;
 }
 
 void	Harl::complain(std::string level) {
@@ -53,11 +52,8 @@ void	Harl::complain(std::string level) {
 	};
 
 	for (int i = 0; i < 4; i++) {
-		if (levels[i].name == level) 
-		{
+		if (levels[i].name == level) {
 			(this->*levels[i].ptr)();
-			for (int j = i + 1; j < 4; j++)
-				(this->*levels[j].ptr)();
 			return ;
 		}	
 	}

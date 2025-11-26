@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:52:55 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/25 15:02:41 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/26 17:57:03 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanA
 {
 	private:
 		std::string	_name;
-		Weapon&		_Weapon;
+		Weapon&		_weapon;
 
 	public:
 		HumanA(std::string name, Weapon& type);
