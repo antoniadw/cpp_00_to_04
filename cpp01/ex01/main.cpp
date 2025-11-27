@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:09:06 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/26 13:52:05 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:19:45 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main(void)
 	// 		horde[i].announce();
 	// 	delete [] horde;
 	// }
-		// 	std::cout << "----- ATTEMPT WITH NULL ZOMBIES -----"<< std::endl;
+	// {		std::cout << "----- ATTEMPT WITH NULL ZOMBIES -----"<< std::endl;
 	// 	int N = -10;
 	// 	Zombie*	horde = zombieHorde(N, NULL);
 	// 	if (!horde) {

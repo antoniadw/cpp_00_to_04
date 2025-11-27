@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:48:55 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/26 13:47:45 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:14:25 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Zombie	*zombieHorde(int N, const char *name){
 	if (!name) {
 		std::cerr << "Error, recruits must have a valid name" << std::endl;
-		return (nullptr);
+		return (NULL);
 	}
 	else
 		return (zombieHorde(N, std::string(name)));
