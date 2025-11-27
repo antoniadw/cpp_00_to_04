@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:35:25 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/25 12:22:46 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:10:11 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,4 @@ void	randomChump(std::string name)
 	Zombie	newZombie(name);
 	
 	newZombie.announce();
-	std::cout << name << " alive in function" << std::endl;
 }
