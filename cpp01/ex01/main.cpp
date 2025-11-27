@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:09:06 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/27 15:19:45 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:23:33 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ int	main(void)
 	// 		horde[i].announce();
 	// 	delete [] horde;
 	// }
-	// {		std::cout << "----- ATTEMPT WITH NULL ZOMBIES -----"<< std::endl;
+	// {
+	//	std::cout << "----- ATTEMPT WITH NULL ZOMBIES -----"<< std::endl;
 	// 	int N = -10;
 	// 	Zombie*	horde = zombieHorde(N, NULL);
 	// 	if (!horde) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:23:48 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/25 14:24:44 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:22:43 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	std::cout << "Address held by stringREF: " << &stringREF << std::endl;
 	std::cout << std::endl;
 
-		std::cout << "--- VALUES OVERVIEW ---" << std::endl;
+	std::cout << "--- VALUES OVERVIEW ---" << std::endl;
 	std::cout << "Value of str: " << str << std::endl;
 	std::cout << "Value pointed by stringPTR: " << *stringPTR << std::endl;
 	std::cout << "Value pointed by stringREF: " << stringREF << std::endl;
