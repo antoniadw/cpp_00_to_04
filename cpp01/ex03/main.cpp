@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:55:46 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/27 15:35:21 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:15:12 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 #include "Weapon.hpp"
+#include <iostream>
 
 int	main ()
 {

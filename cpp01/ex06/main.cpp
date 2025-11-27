@@ -6,11 +6,12 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 21:45:29 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/26 17:47:33 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:07:40 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+#include <iostream>
 
 int	convertArg(const std::string& str)
 {

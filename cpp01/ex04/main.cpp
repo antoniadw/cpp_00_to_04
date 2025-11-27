@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 21:43:23 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/11/26 22:13:22 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/11/27 16:59:38 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,14 @@ int	main(int argc, char **argv)
 	outputFile.close();
 	return (0);
 }
+
+/* TESTING */
+/* 1 - Empty file */
+/* 2 - Unexisting input file */
+/* 3 - Empty s1 */
+/* 4 - 1 occurence "Hello World" s1 = Hello s2 = Coucou */
+/* 5 - Multiple occurences Hello World */
+/* 6 - Mixed "Banana" s1 = a s2 = aa */
+/* 7 - No occurence */
+/* 8 - Empty s2 */
+/* 9 - Try with more or less arguments */
