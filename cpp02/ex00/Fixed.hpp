@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:32:12 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/01 16:18:12 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:30:34 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,14 @@ class Fixed {
 		static const int	_fracBits;
 	
 	public:
-		Fixed(void);							//default constructor
-		Fixed(Fixed const& cpy);				//copy constructor
-		~Fixed(void);							//default destructor
+		Fixed(void);
+		Fixed(Fixed const& cpy);
+		~Fixed(void);
 
-		Fixed&	operator=(Fixed const& rhs);	//copy assignment operator overload
+		Fixed&	operator=(Fixed const& other);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-
 };
 
 #endif
-
-/*
-Forme canonique = regle de conception.
-Quand tu crées un objet, C++ doit savoir :
-
-Comment le créer (constructeur par défaut)
-Comment le copier (constructeur de copie)
-Comment l'assigner (opérateur =)
-Comment le détruire (destructeur)
-*/

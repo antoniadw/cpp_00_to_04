@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:32:08 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/03 18:11:40 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:47:20 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <math.h>
+#include <iostream>
 
 const int	Fixed::_fracBits = 8;
 
@@ -32,10 +34,10 @@ Fixed::Fixed(Fixed const& cpy) {
 	*this = cpy;
 }
 
-Fixed&	Fixed::operator=(Fixed const& rhs) {
+Fixed&	Fixed::operator=(Fixed const& other) {
 	std::cout << "Copy assignment operator called\n";
-	if (this != &rhs)
-		this->_fixedValue = rhs.getRawBits();
+	if (this != &other)
+		this->_fixedValue = other.getRawBits();
 	return (*this);
 }
 
@@ -59,7 +61,7 @@ int		Fixed::toInt(void) const {
 	return (_fixedValue >> _fracBits);
 }
 
-std::ostream&	operator<<(std::ostream& o, Fixed const& rhs) {
-	o << rhs.toFloat();
+std::ostream&	operator<<(std::ostream& o, Fixed const& other) {
+	o << other.toFloat();
 	return (o);
 }

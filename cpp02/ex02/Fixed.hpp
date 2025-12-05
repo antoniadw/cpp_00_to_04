@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:32:12 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/04 16:36:13 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:48:24 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,30 @@ class Fixed {
 		static const int	_fracBits;
 	
 	public:
-		Fixed(void);							//default constructor
+		Fixed(void);
 		Fixed(int const	value);
 		Fixed(float const number);
-		Fixed(Fixed const& cpy);				//copy constructor
-		~Fixed(void);							//default destructor
+		Fixed(Fixed const& cpy);
+		~Fixed(void);
 
-		Fixed&	operator=(Fixed const& rhs);	//copy assignment operator overload
+		Fixed&	operator=(Fixed const& other);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
 
-		bool	operator>(const Fixed& rhs) const;
-		bool	operator<(const Fixed& rhs) const;
-		bool	operator>=(const Fixed& rhs) const;
-		bool	operator<=(const Fixed& rhs) const;
-		bool	operator==(const Fixed& rhs) const;
-		bool	operator!=(const Fixed& rhs) const;
+		bool	operator>(const Fixed& other) const;
+		bool	operator<(const Fixed& other) const;
+		bool	operator>=(const Fixed& other) const;
+		bool	operator<=(const Fixed& other) const;
+		bool	operator==(const Fixed& other) const;
+		bool	operator!=(const Fixed& other) const;
 		
-		Fixed	operator+(const Fixed& rhs) const;
-		Fixed	operator-(const Fixed& rhs) const;
-		Fixed	operator*(const Fixed& rhs) const;
-		Fixed	operator/(const Fixed& rhs) const;
+		Fixed	operator+(const Fixed& other) const;
+		Fixed	operator-(const Fixed& other) const;
+		Fixed	operator*(const Fixed& other) const;
+		Fixed	operator/(const Fixed& other) const;
 
 		Fixed&	operator++();
 		Fixed&	operator--();
@@ -57,6 +57,6 @@ class Fixed {
 		static const Fixed&	max(const Fixed& a, const Fixed& b);
 };
 
-std::ostream&	operator<<(std::ostream& o, Fixed const& rhs);
+std::ostream&	operator<<(std::ostream& o, Fixed const& other);
 
 #endif
