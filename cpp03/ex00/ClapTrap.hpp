@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:35:16 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/08 12:51:41 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/08 21:13:47 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,26 @@
 
 class ClapTrap {
 	private:
-		std::string	_name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		int				_attackDamage;
 
 	public:
-		ClapTrap(void);
-		ClapTrap(std::string& name);
+		ClapTrap();
+		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& other);
-		~ClapTrap(void);
+		ClapTrap& operator=(const ClapTrap& other);
+		~ClapTrap();
+		
+		const std::string&	getName(void) const;
+		int					getHitPoints(void) const;
+		int					getEnergyPoints(void) const;
+		int					getAttackDamage(void) const;
 
-		ClapTrap&	operator=(const ClapTrap& other);
-
-		void		attack(const std::string& target);
-		void		takeDamage(unsigned int amout);
-		void		beRepaired(unsigned int amout);
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amout);
+		void	beRepaired(unsigned int amout);
 };
 
 #endif
