@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:35:16 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/08 21:13:47 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/09 13:06:04 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap {
 		std::string		_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
-		int				_attackDamage;
+		unsigned int	_attackDamage;
 
 	public:
 		ClapTrap();

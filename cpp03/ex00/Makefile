@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJDIR = objs/
 
-SRC = 	ClapTrap.cpp		\
+SRC = 	ClapTrap.cpp	\
 		main.cpp		\
 
 OBJS = $(addprefix $(OBJDIR), $(SRC:.cpp=.o))

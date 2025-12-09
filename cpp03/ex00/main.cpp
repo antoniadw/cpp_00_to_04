@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:35:11 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/08 21:09:15 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/09 14:02:50 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int main(void)
 	std::cout << std::endl;
 	std::cout << "--- PRESENTATIONS ---" << std::endl;
 	std::cout << attack.getName() << " stats: " << std::endl;
-	std::cout << "Energy points: " << attack.getEnergyPoints() << std::endl;
 	std::cout << "Hit points: " << attack.getHitPoints() << std::endl;
+	std::cout << "Energy points: " << attack.getEnergyPoints() << std::endl;
 	std::cout << "Attack damage: " << attack.getAttackDamage() << std::endl;
 	std::cout << std::endl;
 
 	std::cout << defend.getName() << " stats: " << std::endl;
-	std::cout << "Energy points: " << defend.getEnergyPoints() << std::endl;
 	std::cout << "Hit points: " << defend.getHitPoints() << std::endl;
+	std::cout << "Energy points: " << defend.getEnergyPoints() << std::endl;
 	std::cout << "Attack damage: " << defend.getAttackDamage() << std::endl;
 	std::cout << std::endl;
 
