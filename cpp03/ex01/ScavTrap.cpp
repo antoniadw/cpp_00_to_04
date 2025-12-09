@@ -1,0 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/09 11:03:09 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/12/09 14:20:54 by ade-woel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ScavTrap.hpp"
+
+// === Constructors & Destructor =============================================
+
+ScavTrap::ScavTrap(): ClapTrap("Default", 100, 50, 20) {
+	std::cout << "Default ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const std::string& name): ClapTrap(name, 100, 50, 20) {
+	std::cout << "ScavTrap constructor of " << _name << " called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other._name, other._hitPoints, other._energyPoints, other._attackDamage)
+{
+	std::cout << "Copy ScavTrap constructor of " << _name << " called" << std::endl;
+}
+
+ScavTrap::~ScavTrap() {
+	std::cout << "ScavTrap destructor of " << _name << " called" << std::endl;
+}
+
+// === Public Methods ========================================================
+
+void	ScavTrap::attack(const std::string& target) {
+	if (_hitPoints <= 0) {
+		std::cout	<< "Oops, " << _name
+					<< " is dead and can't attack" << std::endl;
+		return ;
+	}
+	if (_energyPoints <= 0) {
+		std::cout	<< "Oops, " << _name
+					<< " is too weak to attack" << std::endl;
+		return ;
+	}
+	_energyPoints--;
+	std::cout 	<< "ScavTrap " << _name
+				<< " attacks " << target
+				<< " its own way cause it can, causing " << _attackDamage
+				<< " points of damage!" << std::endl;
+}
+
+void	ScavTrap::guardGate(void) {
+	std::cout << "ScavTrap " << _name << " is now in gate keeping mode" << std::endl;
+}
+
+// === Operators =============================================================
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	if (this == &other)
+		return (*this);
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+	return (*this);
+}
