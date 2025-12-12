@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:35:19 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/08 21:12:08 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:30:10 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(void):	_name("Default"),
 							_hitPoints(10),
 							_energyPoints(10),
 							_attackDamage(0) {
-	std::cout << "Default constructor of " << _name << " called" << std::endl;
+	std::cout 	<< "Default constructor of " << _name << " called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name):	_name(name),
@@ -40,24 +40,6 @@ ClapTrap::~ClapTrap(void) {
 }
 
 
-// === Accessors ========================================================
-
-const std::string&	ClapTrap::getName(void) const {
-	return (_name);
-}
-
-int		ClapTrap::getHitPoints(void) const {
-	return (_hitPoints);	
-}
-
-int		ClapTrap::getEnergyPoints(void) const {
-	return (_energyPoints);
-}
-
-int		ClapTrap::getAttackDamage(void) const {
-	return (_attackDamage);
-}
-
 // === Operators =============================================================
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
@@ -72,49 +54,85 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 }
 
 
+// === Accessors ========================================================
+
+const std::string&	ClapTrap::getName(void) const {
+	return (_name);
+}
+
+unsigned int		ClapTrap::getHitPoints(void) const {
+	return (_hitPoints);	
+}
+
+unsigned int		ClapTrap::getEnergyPoints(void) const {
+	return (_energyPoints);
+}
+
+unsigned int		ClapTrap::getAttackDamage(void) const {
+	return (_attackDamage);
+}
+
+
 // === Public Methods ============================================================
 
 void	ClapTrap::attack(const std::string& target) {
-	if (_hitPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is dead and can't attack" << std::endl;
+	if (_hitPoints == 0) {
+		std::cout <<_name << " is dead and can't attack" << std::endl;
 		return ;
 	}
-	if (_energyPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is too weak to attack" << std::endl;
+	else if (_energyPoints > 0) {
+		std::cout 	<< "ClapTrap " << _name
+					<< " attacks " << target
+					<< ", causing " << _attackDamage
+					<< " points of damage!" << std::endl;
+		_energyPoints--;
 		return ;
 	}
-	_energyPoints--;
-	std::cout 	<< "ClapTrap " << _name
-				<< " attacks " << target
-				<< ", causing " << _attackDamage
-				<< " points of damage!" << std::endl;
+	else {
+		std::cout << _name << " is too weak to attack" << std::endl;
+		return ;	
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	_hitPoints -= amount;
-	if (_hitPoints < 0)
+	if ((int)amount < 0) {
+		std::cout << "Invalid damage value, nothing happened" << std::endl;
+		return ;
+	}
+	else if (amount >= _hitPoints) {
+		std::cout	<< "ClapTrap " << _name
+					<< " has suffered " << _hitPoints
+					<< " direct damages!" << std::endl;
 		_hitPoints = 0;
-	std::cout	<< "ClapTrap " << _name
-				<< " has suffered " << amount
-				<< " direct damages!" << std::endl;
+		return ;
+	}
+	else {
+		_hitPoints -= amount;
+		std::cout	<< "ClapTrap " << _name
+					<< " has suffered " << amount
+					<< " direct damages!" << std::endl;
+		return ;
+	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if (_hitPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is dead and can't be repaired" << std::endl;
+	if (_hitPoints == 0) {
+		std::cout << _name << " is dead and can't be repaired" << std::endl;
 		return ;
 	}
-	if (_energyPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is too weak to repair itself" << std::endl;
+	else if ((int)amount < 0) {
+		std::cout << "Invalid repair value, nothing happened" << std::endl;
 		return ;
 	}
-	_energyPoints--;
-	_hitPoints += amount;
-	std::cout	<< "ClapTrap " << _name
-				<< " got repaired by " << amount
-				<< " hitpoint(s)!" << std::endl;
+	else if (_energyPoints > 0) {
+		_hitPoints += amount;
+		std::cout	<< "ClapTrap " << _name
+					<< " got repaired by " << amount
+					<< " hit points!" << std::endl;
+		_energyPoints--;
+	}
+	else {
+		std::cout << _name << " is too weak to repair itself" << std::endl;
+		return ;
+	}
 }

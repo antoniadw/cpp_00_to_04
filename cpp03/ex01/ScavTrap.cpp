@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:03:09 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 14:20:54 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/11 18:36:23 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,6 @@ ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap destructor of " << _name << " called" << std::endl;
 }
 
-// === Public Methods ========================================================
-
-void	ScavTrap::attack(const std::string& target) {
-	if (_hitPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is dead and can't attack" << std::endl;
-		return ;
-	}
-	if (_energyPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is too weak to attack" << std::endl;
-		return ;
-	}
-	_energyPoints--;
-	std::cout 	<< "ScavTrap " << _name
-				<< " attacks " << target
-				<< " its own way cause it can, causing " << _attackDamage
-				<< " points of damage!" << std::endl;
-}
-
-void	ScavTrap::guardGate(void) {
-	std::cout << "ScavTrap " << _name << " is now in gate keeping mode" << std::endl;
-}
 
 // === Operators =============================================================
 
@@ -66,4 +43,30 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
 	return (*this);
+}
+
+
+// === Public Methods ========================================================
+
+void	ScavTrap::attack(const std::string& target) {
+	if (_hitPoints == 0) {
+		std::cout <<_name << " is dead and can't attack" << std::endl;
+		return ;
+	}
+	else if (_energyPoints > 0) {
+		std::cout 	<< "PLOT TWIST! ScavTrap " << _name
+					<< " attacks " << target
+					<< ", causing " << _attackDamage
+					<< " points of damage!" << std::endl;
+		_energyPoints--;
+		return ;
+	}
+	else {
+		std::cout << _name << " is too weak to attack" << std::endl;
+		return ;	
+	}
+}
+
+void	ScavTrap::guardGate(void) {
+	std::cout << "ScavTrap " << _name << " is now in gate keeping mode" << std::endl;
 }

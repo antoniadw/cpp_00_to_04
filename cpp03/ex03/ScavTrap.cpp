@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:03:09 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 16:02:15 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:26:53 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,20 @@ ScavTrap::~ScavTrap() {
 }
 
 
+// === Operators =============================================================
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	if (this == &other)
+		return (*this);
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+	return (*this);
+}
+
+
 // === Public Methods ========================================================
 
 void	ScavTrap::attack(const std::string& target) {
@@ -54,18 +68,4 @@ void	ScavTrap::attack(const std::string& target) {
 
 void	ScavTrap::guardGate(void) {
 	std::cout << "ScavTrap " << _name << " is now in gate keeping mode" << std::endl;
-}
-
-
-// === Operators =============================================================
-
-ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
-	std::cout << "ScavTrap copy assignment operator called" << std::endl;
-	if (this == &other)
-		return (*this);
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-	return (*this);
 }

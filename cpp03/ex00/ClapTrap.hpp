@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:35:16 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 13:06:04 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:11:57 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ class ClapTrap {
 		ClapTrap();
 		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& other);
-		ClapTrap& operator=(const ClapTrap& other);
 		~ClapTrap();
 		
+		ClapTrap& operator=(const ClapTrap& other);
+		
 		const std::string&	getName(void) const;
-		int					getHitPoints(void) const;
-		int					getEnergyPoints(void) const;
-		int					getAttackDamage(void) const;
+		unsigned int		getHitPoints(void) const;
+		unsigned int		getEnergyPoints(void) const;
+		unsigned int		getAttackDamage(void) const;
 
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amout);

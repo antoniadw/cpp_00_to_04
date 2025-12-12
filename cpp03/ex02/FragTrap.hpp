@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:23:19 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 15:58:13 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:38:28 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class FragTrap : public ClapTrap {
 		FragTrap();
 		FragTrap(const std::string& name);
 		FragTrap(const FragTrap& other);
-		FragTrap& operator=(const FragTrap& other);
-		~FragTrap();
+		virtual ~FragTrap();
 
+		FragTrap& operator=(const FragTrap& other);
+		
 		void	highFivesGuys(void);
 };
 

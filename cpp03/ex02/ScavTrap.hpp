@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:03:10 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 13:52:20 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:38:48 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class ScavTrap : public ClapTrap {
 		ScavTrap();
 		ScavTrap(const std::string& name);
 		ScavTrap(const ScavTrap& other);
-		ScavTrap& operator=(const ScavTrap& other);
-		~ScavTrap();
+		virtual ~ScavTrap();
 
-		void	attack(const std::string& target);
-		void	guardGate(void);
+		ScavTrap& operator=(const ScavTrap& other);
+		
+		virtual void	attack(const std::string& target);
+		void			guardGate(void);
 };
 
 #endif

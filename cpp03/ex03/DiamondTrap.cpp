@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:10:47 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 17:57:07 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:26:13 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,6 @@ DiamondTrap::~DiamondTrap(){
 	std::cout << "DiamondTrap destructor of " << _name << " called" << std::endl;
 }
 
-// === Public Methods ========================================================
-
-void	DiamondTrap::attack(const std::string& target){
-	ScavTrap::attack(target);
-}
-
-void	DiamondTrap::whoAmI() {
-	std::cout << "Am I a Scav? Am I a Frag? No, IM a DIAMOND" << std::endl;
-	std::cout << "My name is " << _name << std::endl;
-	std::cout << "My ClapTrap name is " << ClapTrap::_name << std::endl;
-}
 
 // === Operators =============================================================
 
@@ -66,3 +55,17 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
 	this->_attackDamage = other._attackDamage;
 	return (*this);
 }
+
+
+// === Public Methods ========================================================
+
+void	DiamondTrap::attack(const std::string& target){
+	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::whoAmI() {
+	std::cout << "Am I a Scav? Am I a Frag? No, IM a DIAMOND" << std::endl;
+	std::cout << "My name is " << _name << std::endl;
+	std::cout << "My ClapTrap name is " << ClapTrap::_name << std::endl;
+}
+

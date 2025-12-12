@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:23:26 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 16:08:47 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/11 11:24:54 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ FragTrap::~FragTrap(){
 	std::cout << "FragTrap destructor of " << _name << " called" << std::endl;
 }
 
-// === Public Methods ========================================================
-
-void	FragTrap::highFivesGuys(void){
-	std::cout << "High five ?! 🙌" << std::endl;
-}
 
 // === Operators =============================================================
 
@@ -48,3 +43,11 @@ FragTrap& FragTrap::operator=(const FragTrap& other) {
 	this->_attackDamage = other._attackDamage;
 	return (*this);
 }
+
+
+// === Public Methods ========================================================
+
+void	FragTrap::highFivesGuys(void){
+	std::cout << "High five ?! 🙌" << std::endl;
+}
+
