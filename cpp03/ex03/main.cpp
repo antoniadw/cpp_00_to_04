@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:52:46 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/09 18:16:25 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/12 13:09:44 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main (void)
 
 	std::cout << "--- SPECIAL ABILITIES ---" << std::endl;	
 	diams.attack("enemy");
+	std::cout << std::endl;
 	diams.whoAmI();
 	std::cout << std::endl;
 

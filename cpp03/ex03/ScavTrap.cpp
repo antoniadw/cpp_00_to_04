@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:03:09 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/11 11:26:53 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/12 13:08:49 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,22 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
 // === Public Methods ========================================================
 
 void	ScavTrap::attack(const std::string& target) {
-	if (_hitPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is dead and can't attack" << std::endl;
+	if (_hitPoints == 0) {
+		std::cout <<_name << " is dead and can't attack" << std::endl;
 		return ;
 	}
-	if (_energyPoints <= 0) {
-		std::cout	<< "Oops, " << _name
-					<< " is too weak to attack" << std::endl;
+	else if (_energyPoints > 0) {
+		std::cout 	<< "PLOT TWIST! ScavTrap " << _name
+					<< " attacks " << target
+					<< ", causing " << _attackDamage
+					<< " points of damage!" << std::endl;
+		_energyPoints--;
 		return ;
 	}
-	_energyPoints--;
-	std::cout 	<< "ScavTrap " << _name
-				<< " attacks " << target
-				<< " its own way cause it can, causing " << _attackDamage
-				<< " points of damage!" << std::endl;
+	else {
+		std::cout << _name << " is too weak to attack" << std::endl;
+		return ;	
+	}
 }
 
 void	ScavTrap::guardGate(void) {
