@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 14:53:34 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 15:05:12 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/12/16 14:55:09 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/12/16 15:07:46 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef BRAIN_H
+# define BRAIN_H
 
-int	main (void) 
-{
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
-	
-	delete j;
-	delete i;
+# include <iostream>
 
-	//
-	//
+class Brain {
+	private:
+		std::string	_ideas[100];
 
-	return (0);
-}
+	public:
+		Brain();
+		Brain(const Brain& other);
+		~Brain();
+		
+		const Brain& operator=(const Brain& rhs);
+};
+
+#endif
