@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:20:04 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 10:36:10 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:35:12 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog: public Animal {
 
 		Dog& operator=(const Dog& other);
 	
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif
