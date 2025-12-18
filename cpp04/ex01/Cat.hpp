@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:59 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:58:39 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/18 13:27:07 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class Cat: public Animal {
 		~Cat();
 
 		Cat& operator=(const Cat& other);
+
+		void				setIdea(int index, std::string& newIdea);
+		const std::string	getIdea(int index) const;
 		
 		virtual void	makeSound(void) const;
 };

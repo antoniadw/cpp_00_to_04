@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:30:44 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 12:21:16 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:58:33 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ WrongCat::~WrongCat(void) {
 
 WrongCat&	WrongCat::operator=(const WrongCat& rhs) {
 	std::cout << "WrongCat copy assignment opertor called" << std::endl;
-	if (this == &rhs)
-		return (*this);
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 

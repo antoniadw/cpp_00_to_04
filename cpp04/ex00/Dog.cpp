@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:41 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 12:12:38 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:58:09 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ Dog::~Dog(void) {
 
 Dog&	Dog::operator=(const Dog& rhs) {
 	std::cout << "Dog copy assignment opertor called" << std::endl;
-	if (this == &rhs)
-		return (*this);
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 

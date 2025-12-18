@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:20:04 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 15:00:40 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/18 13:27:18 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class Dog: public Animal {
 		~Dog();
 
 		Dog& operator=(const Dog& other);
+
+		void				setIdea(int index, std::string& newIdea);
+		const std::string	getIdea(int index) const;
+		const Brain*		getBrainAddress() const;
 	
 		virtual void	makeSound(void) const;
 };

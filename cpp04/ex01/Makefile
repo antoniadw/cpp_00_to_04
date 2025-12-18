@@ -5,11 +5,10 @@ RM = rm -rf
 OBJDIR = objs/
 
 SRC = 	Animal.cpp		\
+		Brain.cpp		\
 		Cat.cpp			\
 		Dog.cpp			\
 		main.cpp		\
-		WrongAnimal.cpp	\
-		WrongCat.cpp	\
 
 OBJS = $(addprefix $(OBJDIR), $(SRC:.cpp=.o))
 

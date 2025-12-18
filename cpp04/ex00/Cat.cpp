@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:55 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/16 12:20:23 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:57:56 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ Cat::~Cat(void) {
 
 Cat&	Cat::operator=(const Cat& rhs) {
 	std::cout << "Cat copy assignment opertor called" << std::endl;
-	if (this == &rhs)
-		return (*this);
-	this->_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 
