@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 17:36:58 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/23 18:21:14 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/12/12 17:16:55 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/12/23 17:58:21 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef ANIMAL_H
+# define ANIMAL_H
 
-int	main (void) 
-{
-	{
-		const AAnimal*	j = new Dog();
-		const AAnimal*	i = new Cat();
-		std::cout << std::endl; 
+# include <iostream>
 
-		j->makeSound();
-		i->makeSound();
-		std::cout << std::endl; 
+class AAnimal {
+	protected:
+		std::string	_type;
+	
+	public:
+		AAnimal();
+		AAnimal(const std::string& type);
+		AAnimal(const AAnimal& other);
+		virtual ~AAnimal();
+
+		AAnimal& operator=(const AAnimal& other);
 		
-		//AAnimal	animal;
+		const std::string&	getType(void) const;
 		
-		delete j;
-		delete i;
-	}
-	return (0);
-}
+		virtual void	makeSound(void) const = 0;
+};
+
+#endif
