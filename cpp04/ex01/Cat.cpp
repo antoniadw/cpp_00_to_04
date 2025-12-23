@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:55 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:27:10 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:50:44 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Cat&	Cat::operator=(const Cat& rhs) {
 
 // === Accessors =============================================================
 
-void	Cat::setIdea(int index, std::string& newIdea){
+void	Cat::setIdea(int index, const std::string& newIdea){
 	if (index < 0 || index >= 100) {
 		std::cerr << "Error - Invalid index" << std::endl;
 		return ;	
@@ -59,6 +59,10 @@ const std::string	Cat::getIdea(int index) const {
 		return ("");	
 	}
 	return (_brain->getIdea(index));
+}
+
+void	Cat::showBrainAddress() const {
+	std::cout << _brain;
 }
 
 

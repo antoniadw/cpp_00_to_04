@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:59 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:27:07 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:50:40 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ class Cat: public Animal {
 
 		Cat& operator=(const Cat& other);
 
-		void				setIdea(int index, std::string& newIdea);
+		void				setIdea(int index, const std::string& newIdea);
 		const std::string	getIdea(int index) const;
+		void				showBrainAddress() const;
 		
 		virtual void	makeSound(void) const;
 };

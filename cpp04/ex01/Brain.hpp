@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:55:09 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:26:55 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:50:49 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Brain {
 		
 		Brain& operator=(const Brain& rhs);
 
-		void				setIdea(int index, std::string& newIdea);
+		void				setIdea(int index, const std::string& newIdea);
 		const std::string	getIdea(int index) const;
 };
 

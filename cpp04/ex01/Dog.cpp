@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:41 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:27:22 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:50:35 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Dog&	Dog::operator=(const Dog& rhs) {
 
 // === Accessors =============================================================
 
-void	Dog::setIdea(int index, std::string& newIdea){
+void	Dog::setIdea(int index, const std::string& newIdea){
 	if (index < 0 || index >= 100) {
 		std::cerr << "Error - Invalid index" << std::endl;
 		return ;	
@@ -61,8 +61,8 @@ const std::string	Dog::getIdea(int index) const {
 	return (_brain->getIdea(index));
 }
 
-const Brain*	Dog::getBrainAddress() const {
-	return(_brain);
+void	Dog::showBrainAddress() const {
+	std::cout << _brain;
 }
 
 // === Public Methods ========================================================

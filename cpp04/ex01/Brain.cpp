@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:03:26 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:26:45 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:50:52 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ Brain&	Brain::operator=(const Brain& rhs) {
 
 // === Accessors =============================================================
 
-void		Brain::setIdea(int index, std::string& newIdea) {
+void		Brain::setIdea(int index, const std::string& newIdea) {
 	if (index < 0 || index >= 100) {
 		std::cerr << "Error - Invalid index" << std::endl;
 		return ;	
 	}
 	_ideas[index] = newIdea;
 }
-	
+
 const std::string	Brain::getIdea(int index) const {
 	if (index < 0 || index >= 100) {
 		std::cerr << "Error - Invalid index" << std::endl;

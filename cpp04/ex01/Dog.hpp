@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:20:04 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:27:18 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:50:32 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Dog: public Animal {
 
 		Dog& operator=(const Dog& other);
 
-		void				setIdea(int index, std::string& newIdea);
+		void				setIdea(int index, const std::string& newIdea);
 		const std::string	getIdea(int index) const;
-		const Brain*		getBrainAddress() const;
+		void				showBrainAddress() const;
 	
 		virtual void	makeSound(void) const;
 };

@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:19:33 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/18 13:20:50 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:17:47 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Animal::Animal(const std::string& type): _type(type) {
 }
 
 Animal::Animal(const Animal& other): _type(other._type) {
-	std::cout << "Copy Animal constructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 }
 
 Animal::~Animal(void) {
