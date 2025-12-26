@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/12 17:19:33 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/26 13:27:21 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/12/23 18:30:31 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/12/26 17:01:26 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "AMateria.hpp"
 
 // === Constructors & Destructor =============================================
 
-AAnimal::AAnimal(void) {
-	std::cout << "Default Animal constructor called" << std::endl;
-}
+AMateria::AMateria(void): _type("undefined") {}
 
-AAnimal::AAnimal(const std::string& type): _type(type) {
-	std::cout << "Animal constructor called" << std::endl;
-}
+AMateria::AMateria(std::string const& type): _type(type) {}
 
-AAnimal::AAnimal(const AAnimal& other): _type(other._type) {
-	std::cout << "Animal copy constructor called" << std::endl;
-}
+AMateria::AMateria(const AMateria& other) {}
 
-AAnimal::~AAnimal(void) {
-	std::cout << "Animal destructor called" << std::endl;
-}
+AMateria::~AMateria(void) {}
 
 
 // === Operators =============================================================
 
-AAnimal&	AAnimal::operator=(const AAnimal& rhs) {
-	std::cout << "Animal assignment operator called" << std::endl;
-	if (this != &rhs)
-		this->_type = rhs._type;
+AMateria& AMateria::operator=(const AMateria& rhs) {
 	return (*this);
 }
 
 
 // === Accessors =============================================================
 
-const std::string&	AAnimal::getType(void) const {
+std::string const&	AMateria::getType() const {
 	return (_type);
+}
+
+
+// === Public Methods ========================================================
+
+void	AMateria::use(ICharacter& target) {
+	(void)target;
 }
