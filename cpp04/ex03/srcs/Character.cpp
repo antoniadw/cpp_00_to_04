@@ -6,11 +6,11 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 17:17:38 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/26 21:45:15 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/27 18:13:14 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "../incl/Character.hpp"
 
 // === Constructors & Destructor =============================================
 
@@ -19,16 +19,15 @@ Character::Character(void): _name("Default") {
 		_inventory[i] = NULL;
 }
 
-Character::Character(std::string& name): _name(name) {
+Character::Character(const std::string& name): _name(name) {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 
 Character::Character(const Character& other): _name(other._name) {
 	for (int i = 0; i < 4; i++) {
-		if (other._inventory[i] != NULL) {
+		if (other._inventory[i])
 			this->_inventory[i] = other._inventory[i]->clone();
-		}
 		else
 			this->_inventory[i] = NULL;
 	}
@@ -69,8 +68,35 @@ std::string const&	Character::getName(void) const {
 
 // === Public Methods ========================================================
 
-void	Character::equip(AMateria* m) {}
+void	Character::equip(AMateria* m) {
+	if (m == NULL)
+		return ;
+	for (int i = 0; i < 4; i++) {
+		if (_inventory[i] == NULL) {
+			_inventory[i] = m;
+			return ;
+		}
+	}
+}
 
-void	Character::unequip(int idx) {}
+void	Character::unequip(int idx) {
+	if (idx < 0 || idx >= 4 || _inventory[idx] == NULL) {
+		std::cout << "Index is invalid" << std::endl;
+		return ;
+	}
+	else
+		_inventory[idx] = NULL;
+}
 
-void	Character::use(int idx, ICharacter& target) {}
+void	Character::use(int idx, ICharacter& target) {
+	if (idx < 0 || idx >= 4) {
+		std::cout << "Index is invalid" << std::endl;
+		return ;
+	}
+	else if (_inventory[idx] == NULL) {
+		std::cout << "Inventory is empty" << std::endl;
+		return ;
+	}
+	else
+		_inventory[idx]->use(target);
+}

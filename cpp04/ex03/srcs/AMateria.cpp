@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/26 16:02:42 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/26 17:06:46 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/12/23 18:30:31 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/12/27 18:19:02 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "../incl/AMateria.hpp"
 
 // === Constructors & Destructor =============================================
 
-Cure::Cure(void): AMateria("cure") {}
+AMateria::AMateria(void): _type("undefined") {}
 
-Cure::Cure(const Cure& other): AMateria("cure") {
+AMateria::AMateria(std::string const& type): _type(type) {}
+
+AMateria::AMateria(const AMateria& other) {
 	(void)other;
 }
 
-Cure::~Cure(void) {}
+AMateria::~AMateria(void) {}
 
 
 // === Operators =============================================================
 
-Cure&	Cure::operator=(const Cure& rhs) {
+AMateria& AMateria::operator=(const AMateria& rhs) {
 	(void)rhs;
 	return (*this);
 }
 
 
-// === Public Methods ========================================================
+// === Accessors =============================================================
 
-AMateria*	Cure::clone(void) const {
-	return (new Cure(*this));
+std::string const&	AMateria::getType() const {
+	return (_type);
 }
 
-void	Cure::use(ICharacter& target) {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+
+// === Public Methods ========================================================
+
+void	AMateria::use(ICharacter& target) {
+	std::cout << target.getName() << " is using a materia" << std::endl;
 }

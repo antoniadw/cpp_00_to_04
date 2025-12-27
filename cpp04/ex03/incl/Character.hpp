@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:35:26 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/26 21:29:42 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/27 18:29:28 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 class Character: public ICharacter {
 	private:
@@ -23,7 +24,7 @@ class Character: public ICharacter {
 	
 	public:
 		Character();
-		Character(std::string& name);
+		Character(const std::string& name);
 		Character(const Character& other);
 		~Character();
 		

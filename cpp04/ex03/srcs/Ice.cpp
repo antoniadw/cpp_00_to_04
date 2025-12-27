@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 18:30:31 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/26 17:01:26 by ade-woel         ###   ########.fr       */
+/*   Created: 2025/12/26 16:02:48 by ade-woel          #+#    #+#             */
+/*   Updated: 2025/12/27 18:13:24 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "../incl/Ice.hpp"
 
 // === Constructors & Destructor =============================================
 
-AMateria::AMateria(void): _type("undefined") {}
+Ice::Ice(void): AMateria("ice") {}
 
-AMateria::AMateria(std::string const& type): _type(type) {}
+Ice::Ice(const Ice& other): AMateria("ice") {
+	(void)other;
+}
 
-AMateria::AMateria(const AMateria& other) {}
-
-AMateria::~AMateria(void) {}
+Ice::~Ice(void) {}
 
 
 // === Operators =============================================================
 
-AMateria& AMateria::operator=(const AMateria& rhs) {
+Ice& Ice::operator=(const Ice& rhs) {
+	(void)rhs;
 	return (*this);
-}
-
-
-// === Accessors =============================================================
-
-std::string const&	AMateria::getType() const {
-	return (_type);
 }
 
 
 // === Public Methods ========================================================
 
-void	AMateria::use(ICharacter& target) {
-	(void)target;
+AMateria*	Ice::clone(void) const {
+	return (new Ice(*this));
+}
+
+void	Ice::use(ICharacter& target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
 }

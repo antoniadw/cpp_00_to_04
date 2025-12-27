@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:32:28 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/26 17:13:57 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/27 18:28:46 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define ICHARACTER_H
 
 # include <iostream>
-# include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter {
 	public:
