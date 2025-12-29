@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
+/*   By: ade-woel <ade-woel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 15:35:05 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/29 17:52:28 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/29 18:09:19 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,22 +90,24 @@ int main()
 	
 	// 	delete copy;
 	// }
-	{
-		std::cout << std::endl;
-		std::cout << "--- Testing edge cases ---" << std::endl; //activate debug messages for more clarity
-		Character Jon;
-		Jon.unequip(0);
-		Jon.use(0, Jon);
-		Jon.use(-3, Jon);
-		Jon.equip(new Ice());
-		Jon.use(0, Jon);
-		Jon.equip(new Ice());
-		Jon.equip(new Ice());
-		Jon.equip(new Ice());
-		Jon.equip(new Ice());
-		AMateria* dropped = Jon.getMatAddress(0);
-		Jon.unequip(0);
-		delete dropped;
-	}
+	// {
+	// 	std::cout << std::endl;
+	// 	std::cout << "--- Testing edge cases ---" << std::endl; //activate debug messages for more clarity
+	// 	Character Jon;
+	// 	Jon.unequip(0);
+	// 	Jon.use(0, Jon);
+	// 	Jon.use(-3, Jon);
+	// 	Jon.equip(new Ice());
+	// 	Jon.use(0, Jon);
+	// 	Jon.equip(new Ice());
+	// 	Jon.equip(new Ice());
+	// 	Jon.equip(new Ice());
+	// 	AMateria* fifth = new Ice();
+	// 	Jon.equip(fifth);
+	// 	AMateria* dropped = Jon.getMatAddress(0);
+	// 	Jon.unequip(0);
+	// 	delete dropped;
+	// 	delete fifth;
+	// }
 	return 0;
 }
