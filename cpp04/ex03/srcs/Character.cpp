@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 17:17:38 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/27 18:13:14 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/29 17:45:28 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,29 +74,31 @@ void	Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (_inventory[i] == NULL) {
 			_inventory[i] = m;
+			//std::cout << "Equiped" << std::endl;
 			return ;
 		}
 	}
 }
 
 void	Character::unequip(int idx) {
-	if (idx < 0 || idx >= 4 || _inventory[idx] == NULL) {
-		std::cout << "Index is invalid" << std::endl;
+	if (idx < 0 || idx >= 4 || _inventory[idx] == NULL)
 		return ;
-	}
-	else
+	else {
 		_inventory[idx] = NULL;
+		//std::cout << "Unequiped" << std::endl;
+	}
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	if (idx < 0 || idx >= 4) {
-		std::cout << "Index is invalid" << std::endl;
+	if (idx < 0 || idx >= 4 || _inventory[idx] == NULL)
 		return ;
-	}
-	else if (_inventory[idx] == NULL) {
-		std::cout << "Inventory is empty" << std::endl;
-		return ;
-	}
 	else
 		_inventory[idx]->use(target);
+}
+
+AMateria*	Character::getMatAddress(int idx) const {
+	if (idx >= 0 && idx < 4 && _inventory[idx])
+		return (_inventory[idx]);
+	else
+		return (NULL);
 }

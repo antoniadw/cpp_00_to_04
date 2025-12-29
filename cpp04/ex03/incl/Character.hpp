@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 18:35:26 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/27 18:29:28 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/29 17:31:30 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Character: public ICharacter {
 		virtual void				equip(AMateria* m);
 		virtual void				unequip(int idx);
 		virtual void				use(int idx, ICharacter& target);
+		AMateria*					getMatAddress(int idx) const;
 		
 };
 

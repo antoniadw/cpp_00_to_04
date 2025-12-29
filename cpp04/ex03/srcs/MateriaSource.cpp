@@ -6,7 +6,7 @@
 /*   By: ade-woel <ade-woel@student.42belgium.be    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 17:14:38 by ade-woel          #+#    #+#             */
-/*   Updated: 2025/12/27 18:13:45 by ade-woel         ###   ########.fr       */
+/*   Updated: 2025/12/27 21:13:08 by ade-woel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,11 @@ void	MateriaSource::learnMateria(AMateria* m) {
 		for (int i = 0; i < 4; i++) {
 			if (_learned[i] == NULL) {
 				_learned[i] = m->clone();
+				delete m;
 				return ;
 			}
 		}
+		delete m;
 		std::cout << "Could not learn Materia because slots are full" << std::endl;
 	}
 }
